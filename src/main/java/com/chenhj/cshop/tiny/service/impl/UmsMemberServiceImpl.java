@@ -26,7 +26,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         StringBuffer sb = new StringBuffer();
         Random random = new Random();
         for (int i = 0; i < 6; i++){
-            sb.append(random.nextInt());
+            sb.append(random.nextInt(10));
         }
         //验证码绑定手机号并存储到redis
         redisService.set(REDIS_KEY_PREFIX_AUTH_CODE + telephone, sb.toString());
